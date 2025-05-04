@@ -8,19 +8,20 @@ public class Data {
         grid = new int[n][m];
     }
 
-    public void repopulate() {
+    public void repopulate() { //a
         int random;
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
+                random = 0;
                 do {
                     random = ((int) (Math.random() * (max / 10)) + 1) * 10;
-                } while (random % 100 == 0 || random > max);
+                } while (random % 100 == 0);
                 grid[i][j] = random;
             } 
         } 
     }
 
-    public int countIncreasingCols() {
+    public int countIncreasingCols() { //b
         boolean check = true;
         int count = 0;
         for (int i = 0; i < grid[0].length; i++) {
